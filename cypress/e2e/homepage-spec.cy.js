@@ -48,9 +48,10 @@ describe("homepage spec", () => {
     }).as('postResponse')
     cy.get('form').contains('button', 'Submit Order').click()
     cy.wait('@postResponse').its('response.statusCode').should('eq', 201)
-    // I know waiting an arbitrary amount of time is insane, but my test fails without it even though I'm waiting for my stubbed response.
+    // I know waiting an arbitrary amount of time is not ideal, but my test fails without it 
+    // even though I'm waiting for my stubbed response.
     cy.wait(1000)
-    // If I don't wait, the div at index 3 isn't there yet. I can't figure out why.
+    // If I don't wait, the div at index 3 isn't there yet. I can't figure out why. It might just be my cypress at this point.
     cy.get('section').find('div').eq(3).find('h3').should('contain', 'Seth')
   });
   it('should not allow the submit button to be pressed unless a name and at least one ingredient is selected', () => {

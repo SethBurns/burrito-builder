@@ -20,7 +20,7 @@ function App() {
         <OrderForm setOrders={setOrders} orders={orders} />
       </header>
 
-      <Orders orders={orders} />
+      <Orders setOrders={setOrders} orders={orders} />
     </main>
   );
 }
