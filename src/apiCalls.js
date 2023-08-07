@@ -13,8 +13,8 @@ export const postOrder = (order) => {
 };
 
 export const deleteOrder = (id) => {
-  return fetch (`http://localhost:3001/api/v1/orders/${id}`, {
+  return fetch(`http://localhost:3001/api/v1/orders/${id}`, {
     method: 'DELETE',
-    headers: {'Content-Type': 'application/json'}
-  }).then(response => response.status)
-}
+    headers: { 'Content-Type': 'application/json' },
+  }).then((response) => response.status);
+};
